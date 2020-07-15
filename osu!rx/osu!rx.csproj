@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82B1F8B8-1979-4866-8BF5-2036303B275E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>osu_rx</RootNamespace>
+    <AssemblyName>osu!rx</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>osu_rx.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OsuManager">
+      <HintPath>..\..\..\..\..\Downloads\Compressed\osu-rx 1.2.0_mpgh.net\OsuManager.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleDependencyInjection">
+      <HintPath>..\..\..\..\..\Downloads\Compressed\osu-rx 1.2.0_mpgh.net\SimpleDependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleIniConfig">
+      <HintPath>..\..\..\..\..\Downloads\Compressed\osu-rx 1.2.0_mpgh.net\SimpleIniConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="WindowsInput">
+      <HintPath>..\..\..\..\..\Downloads\Compressed\osu-rx 1.2.0_mpgh.net\WindowsInput.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ConfigManager.cs" />
+    <Compile Include="Configuration\OsuKeys.cs" />
+    <Compile Include="Configuration\PlayStyles.cs" />
+    <Compile Include="Configuration\SliderAlternationBinding.cs" />
+    <Compile Include="Core\Relax\Accuracy\AccuracyManager.cs" />
+    <Compile Include="Core\Relax\Accuracy\HitObjectTimings.cs" />
+    <Compile Include="Core\Relax\Accuracy\HitScanResult.cs" />
+    <Compile Include="Core\Relax\AlternateResult.cs" />
+    <Compile Include="Core\Relax\Relax.cs" />
+    <Compile Include="Core\Timewarp\Timewarp.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="Helpers\MathHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
