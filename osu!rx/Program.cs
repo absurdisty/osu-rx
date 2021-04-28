@@ -37,7 +37,7 @@ namespace osu_rx
 			Console.Clear();
 			Console.WriteLine("osu!rx failed to initialize:\n");
 			Console.WriteLine("Memory scanning failed! Try restarting osu!, osu!rx or your computer to fix this issue.");
-			Console.WriteLine("It that didn't helped, then report this on GitHub/MPGH.");
+			Console.WriteLine("If that didn't help, then report this on GitHub/MPGH.");
 			Console.WriteLine("Please include as much info as possible (OS version, hack version, build source, debug info, etc.).");
 			Console.WriteLine("\n\nDebug Info:\n");
 			Console.WriteLine(Program.osuManager.DebugInfo);
